@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Map Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght@1..144,25..151,1..1000&family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <hgroup>
+          <h1
+            >The Map <br />
+            Playground</h1
+          >
+          <p>McDonald's U.S. locations by state</p>
+        </hgroup>
+        <form id="controls" class="form">
+          <fieldset class="form-row">
+            <legend class="form-label">Base Map</legend>
+            <div class="form-inputs">
+              <div class="form-input">
+                <input
+                  type="radio"
+                  name="baseMap"
+                  id="baseMapStarndard"
+                  value="standard"
+                />
+                <label for="baseMapStarndard">Standard</label>
+              </div>
+              <div class="form-input">
+                <input
+                  type="radio"
+                  name="baseMap"
+                  id="baseMapTileGrid"
+                  value="tileGrid"
+                />
+                <label for="baseMapTileGrid">Tile Grid</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-row">
+            <legend class="form-label">Symbol Shape</legend>
+            <div class="form-inputs">
+              <div class="form-input">
+                <input
+                  type="radio"
+                  name="symbolShape"
+                  id="symbolShapeCircle"
+                  value="circle"
+                />
+                <label for="symbolShapeCircle">Circle</label>
+              </div>
+              <div class="form-input">
+                <input
+                  type="radio"
+                  name="symbolShape"
+                  id="symbolShapeSquare"
+                  value="square"
+                />
+                <label for="symbolShapeSquare">Square</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-row">
+            <legend class="form-label">Symbol Position</legend>
+            <div class="form-inputs">
+              <div class="form-input">
+                <input
+                  type="radio"
+                  name="symbolPosition"
+                  id="symbolPositionFixedAtCentroid"
+                  value="fixedAtCentroid"
+                />
+                <label for="symbolPositionFixedAtCentroid"
+                  >Fixed at Centroid</label
+                >
+              </div>
+              <div class="form-input">
+                <input
+                  type="radio"
+                  name="symbolPosition"
+                  id="symbolPositionAvoidOverlapping"
+                  value="avoidOverlapping"
+                />
+                <label for="symbolPositionAvoidOverlapping"
+                  >Avoid Overlapping</label
+                >
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-row">
+            <label
+              id="symbolSizeLabel"
+              for="symbolSizeNumberInput"
+              class="form-label"
+              >Symbol Size</label
+            >
+            <div class="form-inputs form-inputs--inline">
+              <input
+                type="number"
+                name="symbolSize"
+                id="symbolSizeNumberInput"
+                min="0"
+                max="100"
+                step="1"
+                required
+              />
+              <input
+                type="range"
+                name="symbolSize"
+                id="symbolSizeRangeInput"
+                min="0"
+                max="100"
+                step="1"
+                aria-labelledby="symbolSizeLabel"
+              />
+            </div>
+          </div>
+        </form>
+        <div id="chart"></div>
+        <footer>
+          <p
+            >This is inspired by
+            <a href="https://observablehq.com/@neocarto" target="_blank"
+              >Nicolas Lambert</a
+            >'s
+            <a
+              href="https://observablehq.com/@neocarto/dorling-vs-demers"
+              target="_blank"
+              >Demers Cartogram</a
+            >
+            to test different ways to visualize the same quantitative data as a
+            thematic map.
+          </p>
+          <p
+            >Data source:
+            <a
+              href="https://statspanda.com/tools/locations/mcdonalds"
+              target="_blank"
+              >StatsPanda: McDonald's Locations in USA</a
+            ></p
+          >
+          <p
+            >Design inspiration:
+            <a
+              href="https://www.visualcapitalist.com/fast-food-brands-with-the-most-u-s-locations/"
+              target="_blank"
+              >Ranked: Fast Food Brands with the Most U.S. Locations</a
+            ></p
+          >
+        </footer>
+      </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-bboxCollide@1.0.4/build/d3-bboxCollide.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

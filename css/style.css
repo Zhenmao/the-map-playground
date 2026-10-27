@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: currentColor;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --font-family-cursive: "Luckiest Guy", cursive;
+  --font-family-sans: "Google Sans Flex", sans-serif;
+
+  --font-size-sm: clamp(0.8rem, -0.09vi + 0.82rem, 0.75rem);
+  --font-size-md: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
+  --font-size-lg: clamp(1.25rem, 0.8vi + 1.05rem, 1.69rem);
+  --font-size-xl: clamp(1.56rem, 1.76vi + 1.12rem, 2.53rem);
+  --font-size-2xl: clamp(1.95rem, 3.35vi + 1.12rem, 3.8rem);
+  --font-size-3xl: clamp(2.44rem, 5.92vi + 0.96rem, 5.7rem);
+  --font-size-4xl: clamp(3.05rem, 9.98vi + 0.56rem, 8.54rem);
+
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+
+  --line-height-title: 0.85;
+  --line-height-body: 1.2;
+
+  --color-background: #e4debe;
+  --color-text: #000000;
+  --color-accent-1: #f9b023;
+  --color-accent-2: #f76841;
+  --color-land: #ffffff;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-body);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  accent-color: var(--color-accent-2);
+}
+
+hgroup {
+  text-transform: uppercase;
+  text-wrap: balance;
+  display: grid;
+  gap: 0.5rem;
+}
+
+h1 {
+  font-family: var(--font-family-cursive);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-title);
+  font-size: var(--font-size-4xl);
+  letter-spacing: 0.075em;
+  text-shadow: -0.075em 0.075em 0 var(--color-accent-1);
+}
+
+hgroup p {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-title);
+  font-variation-settings: "wdth" 25;
+  letter-spacing: 0.15em;
+}
+
+footer {
+  display: grid;
+  gap: 0.5rem;
+}
+
+main {
+  margin-block: 4rem;
+}
+
+article {
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
+  display: grid;
+  gap: 2rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  float: left;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 2.5em;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 0.75em;
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  margin-block-end: 0.5em;
+}
+
+label {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.form-inputs--inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.form-input {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  margin-block-end: 0.25em;
+}
+
+input[type="radio"] {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+input[type="number"] {
+  font: inherit;
+  font-size: var(--font-size-sm);
+  padding: 0.25em 0 0.25em 0.5em;
+}
+
+.chart {
+  position: relative;
+}
+
+.chart .base-map {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.chart .base-map.is-hidden {
+  opacity: 0;
+}
+
+.chart .base-map__state {
+  fill: var(--color-accent-1);
+  stroke: var(--color-background);
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chart .bubble__rect {
+  fill: var(--color-accent-2);
+  fill-opacity: 0.9;
+  stroke: var(--color-background);
+  stroke-width: 0.5px;
+}
+
+.chart .is-active .bubble__rect {
+  stroke: var(--color-text);
+  stroke-width: 1.5px;
+}
+
+.chart .bubble__label {
+  fill: currentColor;
+  user-select: none;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-accent-1);
+  border: 1.5px solid var(--color-text);
+  padding: 0.5em 0.5em 0.25em;
+  pointer-events: none;
+  text-align: center;
+  min-width: 12ch;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.1s,
+    visibility 0.1s;
+}
+
+.tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip__title {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.tooltip__value {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}

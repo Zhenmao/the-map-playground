@@ -1,0 +1,52 @@
+﻿state,code,col,row
+Alaska,AK,2,1
+Hawaii,HI,2,8
+Washington,WA,3,3
+Oregon,OR,3,4
+California,CA,3,5
+Idaho,ID,4,3
+Nevada,NV,4,4
+Utah,UT,4,5
+Arizona,AZ,4,6
+Montana,MT,5,3
+Wyoming,WY,5,4
+Colorado,CO,5,5
+New Mexico,NM,5,6
+North Dakota,ND,6,3
+South Dakota,SD,6,4
+Nebraska,NE,6,5
+Kansas,KS,6,6
+Oklahoma,OK,6,7
+Texas,TX,6,8
+Minnesota,MN,7,3
+Iowa,IA,7,4
+Missouri,MO,7,5
+Arkansas,AR,7,6
+Louisiana,LA,7,7
+Illinois,IL,8,3
+Indiana,IN,8,4
+Kentucky,KY,8,5
+Tennessee,TN,8,6
+Mississippi,MS,8,7
+Wisconsin,WI,9,3
+Ohio,OH,9,4
+West Virginia,WV,9,5
+North Carolina,NC,9,6
+Alabama,AL,9,7
+Michigan,MI,10,3
+Pennsylvania,PA,10,4
+Virginia,VA,10,5
+South Carolina,SC,10,6
+Georgia,GA,10,7
+New York,NY,11,3
+New Jersey,NJ,11,4
+Maryland,MD,11,5
+District of Columbia,DC,11,6
+Florida,FL,11,8
+Vermont,VT,12,2
+Rhode Island,RI,12,3
+Connecticut,CT,12,4
+Delaware,DE,12,5
+Maine,ME,13,1
+New Hampshire,NH,13,2
+Massachusetts,MA,13,3
